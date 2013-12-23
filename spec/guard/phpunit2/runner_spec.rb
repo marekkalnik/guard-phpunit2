@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'byebug'
 
 describe Guard::PHPUnit2::Runner do
 
@@ -50,7 +51,7 @@ describe Guard::PHPUnit2::Runner do
       end
 
       it 'runs phpunit tests with provided command' do
-        formatter_path = @project_path.join('lib', 'guard', 'phpunit', 'formatters', 'PHPUnit-Progress')
+        formatter_path = @project_path.join('lib', 'guard', 'phpunit2', 'formatters', 'PHPUnit-Progress')
         subject.should_receive(:execute_command).with(
           %r{^/usr/local/bin/phpunit --include-path #{formatter_path} --printer PHPUnit_Extensions_Progress_ResultPrinter .+$}
         ).and_return(true)
@@ -99,9 +100,9 @@ describe Guard::PHPUnit2::Runner do
           $?.stub(:success? => false, :exitstatus => 2)
 
           output = load_phpunit_output('errors')
+
           subject.stub(:execute_command).and_return(output)
           subject.should_receive(:notify_results).with(output, anything())
-
           subject.run( ['tests'] )
         end
 
