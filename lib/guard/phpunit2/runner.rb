@@ -75,7 +75,7 @@ module Guard
           end
 
           # print the output to the terminal
-          puts output
+          UI.info output
 
           # return false in case the system call fails with no status!
           return false if $?.nil?
