@@ -29,7 +29,11 @@ $ gem install guard-phpunit2
 Usage
 -----
 
-Please read the [Guard usage documentation][3].
+```
+$ guard init phpunit2
+```
+
+For further reference, please read the [Guard usage documentation][3].
 
 Guardfile
 ---------
