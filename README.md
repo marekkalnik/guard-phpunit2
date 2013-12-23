@@ -6,6 +6,8 @@ are modified. It helps with integrating test-driven development (TDD) into
 your development process: Just launch guard-phpunit before you start working
 and it will notify you about the status of your tests!
 
+*Note*: This version is compatible with PHPUnit 3.7 or higher.
+
 *Note*: Although guard-phpunit should work with any [PHP][7] version [PHPUnit][6] supports,
 it has only been tested on [PHP][7] 5.3.8 and 5.4.4.
 
